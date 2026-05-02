@@ -1,0 +1,197 @@
+python3 bot.pyubuntu@ubuntu:~/bakong-bot$ python3 bot.py
+Traceback (most recent call last):
+  File "/home/ubuntu/bakong-bot/bot.py", line 4, in <module>
+    from telegram import Update, InlineKeyboardButton, InlineKeyboard
+Markup
+ImportError: cannot import name 'Update' from 'telegram' (/home/ubunt
+u/.local/lib/python3.10/site-packages/telegram/__init__.py)
+ubuntu@ubuntu:~/bakong-bot$ pip3 uninstall telegram python-telegram-b
+ot -y
+Found existing installation: telegram 0.0.1
+Uninstalling telegram-0.0.1:
+  Successfully uninstalled telegram-0.0.1
+Found existing installation: python-telegram-bot 22.7
+Uninstalling python-telegram-bot-22.7:
+  Successfully uninstalled python-telegram-bot-22.7
+ubuntu@ubuntu:~/bakong-bot$ pip3 install "python-telegram-bot==22.7"
+--upgrade
+Defaulting to user installation because normal site-packages is not w
+riteable
+Collecting python-telegram-bot==22.7
+  Using cached python_telegram_bot-22.7-py3-none-any.whl (745 kB)
+Requirement already satisfied: httpx<0.29,>=0.27 in /home/ubuntu/.loc
+al/lib/python3.10/site-packages (from python-telegram-bot==22.7) (0.2
+8.1)
+Requirement already satisfied: idna in /usr/lib/python3/dist-packages
+ (from httpx<0.29,>=0.27->python-telegram-bot==22.7) (3.3)
+Requirement already satisfied: httpcore==1.* in /home/ubuntu/.local/l
+ib/python3.10/site-packages (from httpx<0.29,>=0.27->python-telegram-
+bot==22.7) (1.0.9)
+Requirement already satisfied: certifi in /home/ubuntu/.local/lib/pyt
+hon3.10/site-packages (from httpx<0.29,>=0.27->python-telegram-bot==2
+2.7) (2026.4.22)
+  Successfully uninstalled telegram-0.0.1
+Found existing installation: python-telegram-bot 22.7
+Uninstalling python-telegram-bot-22.7:
+  Successfully uninstalled python-telegram-bot-22.7
+ubuntu@ubuntu:~/bakong-bot$ pip3 install "python-telegram-bot==22.7"
+--upgrade
+Defaulting to user installation because normal site-packages is not w
+riteable
+Collecting python-telegram-bot==22.7
+  Using cached python_telegram_bot-22.7-py3-none-any.whl (745 kB)
+Requirement already satisfied: httpx<0.29,>=0.27 in /home/ubuntu/.loc
+al/lib/python3.10/site-packages (from python-telegram-bot==22.7) (0.2
+8.1)
+Requirement already satisfied: idna in /usr/lib/python3/dist-packages
+ (from httpx<0.29,>=0.27->python-telegram-bot==22.7) (3.3)
+Requirement already satisfied: httpcore==1.* in /home/ubuntu/.local/l
+ib/python3.10/site-packages (from httpx<0.29,>=0.27->python-telegram-
+bot==22.7) (1.0.9)
+Requirement already satisfied: certifi in /home/ubuntu/.local/lib/pyt
+hon3.10/site-packages (from httpx<0.29,>=0.27->python-telegram-bot==2
+2.7) (2026.4.22)
+Requirement already satisfied: anyio in /home/ubuntu/.local/lib/pytho
+n3.10/site-packages (from httpx<0.29,>=0.27->python-telegram-bot==22.
+7) (4.13.0)
+Requirement already satisfied: h11>=0.16 in /home/ubuntu/.local/lib/p
+ython3.10/site-packages (from httpcore==1.*->httpx<0.29,>=0.27->pytho
+n-telegram-bot==22.7) (0.16.0)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /home/ubuntu/
+.local/lib/python3.10/site-packages (from anyio->httpx<0.29,>=0.27->p
+ython-telegram-bot==22.7) (1.3.1)
+Requirement already satisfied: typing_extensions>=4.5 in /home/ubuntu
+/.local/lib/python3.10/site-packages (from anyio->httpx<0.29,>=0.27->
+python-telegram-bot==22.7) (4.15.0)
+Installing collected packages: python-telegram-bot
+Successfully installed python-telegram-bot-22.7
+ubuntu@ubuntu:~/bakong-bot$ python3 bot.py
+/home/ubuntu/bakong-bot/bot.py:409: PTBUserWarning: If 'per_message=F
+alse', 'CallbackQueryHandler' will not be tracked for every message.
+Read this FAQ entry to learn more about the per_* settings: https://g
+ithub.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Ask
+ed-Questions#what-do-the-per_-settings-in-conversationhandler-do.
+  payment_conv = ConversationHandler(
+/home/ubuntu/bakong-bot/bot.py:429: PTBUserWarning: If 'per_message=F
+alse', 'CallbackQueryHandler' will not be tracked for every message.
+Read this FAQ entry to learn more about the per_* settings: https://g
+ithub.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Ask
+ed-Questions#what-do-the-per_-settings-in-conversationhandler-do.
+  check_conv = ConversationHandler(
+2026-05-02 21:38:36,077 - __main__ - INFO - Bot is starting...
+2026-05-02 21:38:38,564 - httpx - INFO - HTTP Request: POST https://a
+pi.telegram.org/bot8730502211:AAH2Tv1nvmfSJSWG_E7M6i8L1Y2e586ciis/get
+Me "HTTP/1.1 401 Unauthorized"
+2026-05-02 21:38:38,565 - telegram.ext - ERROR - Network Retry Loop (
+Bootstrap Initialize Application): Invalid token. Aborting retry loop
+.
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 857, in initialize
+    await self.get_me()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 2008, in get_me
+    return await super().get_me(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 990, in get_me
+    result = await self._post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 704, in _post
+    return await self._do_post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 733, in _do_post
+    result = await request.post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/req
+uest/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/req
+uest/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.InvalidToken: Unauthorized
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_utils/networkloop.py", line 136, in do_action
+    await action_cb()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 860, in initialize
+    raise InvalidToken(f"The token `{self._token}` was rejected by th
+e server.") from exc
+telegram.error.InvalidToken: The token `8730502211:AAH2Tv1nvmfSJSWG_E
+7M6i8L1Y2e586ciis` was rejected by the server.
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 857, in initialize
+    await self.get_me()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 2008, in get_me
+    return await super().get_me(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 990, in get_me
+    result = await self._post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 704, in _post
+    return await self._do_post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 733, in _do_post
+    result = await request.post(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/req
+uest/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/req
+uest/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.InvalidToken: Unauthorized
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/home/ubuntu/bakong-bot/bot.py", line 453, in <module>
+    main()
+  File "/home/ubuntu/bakong-bot/bot.py", line 449, in main
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_application.py", line 839, in run_polling
+    return self.__run(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_application.py", line 1054, in __run
+    loop.run_until_complete(self._bootstrap_initialize(max_retries=bo
+otstrap_retries))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run
+_until_complete
+    return future.result()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_application.py", line 1014, in _bootstrap_initialize
+    await network_retry_loop(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_utils/networkloop.py", line 136, in do_action
+    await action_cb()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/ext
+/_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/telegram/_bo
+t.py", line 860, in initialize
+    raise InvalidToken(f"The token `{self._token}` was rejected by th
+e server.") from exc
+telegram.error.InvalidToken: The token `8730502211:AAH2Tv1nvmfSJSWG_E
+7M6i8L1Y2e586ciis` was rejected by the server.
+ubuntu@ubuntu:~/bakong-bot$
