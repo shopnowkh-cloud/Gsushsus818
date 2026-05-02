@@ -1,0 +1,5 @@
+python-telegram-bot==22.7
+bakong-khqr==0.5.7
+requests==2.33.1
+qrcode==8.2
+Pillow==12.2.0
