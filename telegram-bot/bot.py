@@ -423,6 +423,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
+        per_message=False,
     )
 
     check_conv = ConversationHandler(
@@ -434,6 +435,7 @@ def main() -> None:
             CHECK_MD5: [MessageHandler(filters.TEXT & ~filters.COMMAND, check_payment_md5)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
+        per_message=False,
     )
 
     application.add_handler(CommandHandler("start", start))
