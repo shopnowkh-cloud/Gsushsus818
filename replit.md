@@ -2,7 +2,7 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript + a Python Telegram bot for Bakong KHQR payment.
+pnpm workspace monorepo using TypeScript + Python services for Bakong KHQR payment.
 
 ## Stack
 
@@ -24,11 +24,46 @@ pnpm workspace monorepo using TypeScript + a Python Telegram bot for Bakong KHQR
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
-See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+---
 
-## Telegram Bot (Bakong KHQR)
+## Bakong KHQR Payment API
 
-Located in `telegram-bot/` — a standalone Python bot.
+Located in `bakong-api/` — Python FastAPI REST API.
+
+### Files
+- `bakong-api/main.py` — FastAPI application
+- `bakong-api/requirements.txt` — Python dependencies
+
+### Environment Variables
+- `BAKONG_TOKEN` — Bakong NBC JWT token
+- `KHQR_API_KEYS` — Comma-separated API key(s) for securing this API (X-API-Key header)
+
+### Run
+```bash
+cd bakong-api && PORT=5000 python3 main.py
+```
+
+### Endpoints
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | API info |
+| GET | `/health` | Health check |
+| GET | `/docs` | Swagger UI |
+| GET | `/redoc` | ReDoc UI |
+| POST | `/api/v1/generate-qr` | Generate KHQR QR code |
+| POST | `/api/v1/check-payment` | Check payment status by MD5 |
+| GET | `/api/v1/payment/{md5}` | Get paid transaction details |
+| POST | `/api/v1/bulk-check` | Check up to 50 MD5s at once |
+| POST | `/api/v1/deeplink` | Generate Bakong deep link |
+
+### Authentication
+All endpoints require `X-API-Key: <your-key>` header.
+
+---
+
+## Bakong KHQR Telegram Bot
+
+Located in `telegram-bot/` — Python Telegram bot.
 
 ### Files
 - `telegram-bot/bot.py` — main bot logic
@@ -38,15 +73,12 @@ Located in `telegram-bot/` — a standalone Python bot.
 - `BAKONG_TOKEN` — Bakong API JWT token
 - `TELEGRAM_BOT_TOKEN` — Telegram bot token from @BotFather
 
-### Features
-- `/start` — welcome menu with inline buttons
-- `/pay` — step-by-step flow to generate a Bakong KHQR QR code (account, name, city, amount, currency, bill number)
-- `/check` — check payment status by MD5 hash
+### Commands
+- `/start` — welcome menu
+- `/pay` — generate KHQR QR code step by step
+- `/check` — check payment status by MD5
 - `/help` — usage guide
 - `/cancel` — cancel current operation
-- Inline payment status check button on each generated QR
-- Supports USD and KHR currencies
-- Generates styled KHQR PNG image + Bakong deep link
 
 ### Run
 ```bash
